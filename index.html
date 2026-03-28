@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FaceComm | Our Way or No Way In</title>
+    <meta name="description" content="FaceComm: an AI-powered multi-tenant customer security management platform">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yourusername.github.io/repository-name/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://face-comm.github.io">
+    <meta property="og:title" content="FaceComm">
+    <meta property="og:description" content="FaceComm: an AI-powered multi-tenant customer security management platform">
+    <meta property="og:image" content="https://face-comm.github.io/img/facecomm-logo.png">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+      :root {
+        --primary: #2ea44f;
+        --dark: #24292e;
+        --light: #f6f8fa;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+        margin: 0;
+        color: var(--dark);
+        line-height: 1.6;
+      }
+
+      header {
+        background: var(--dark);
+        color: white;
+        padding: 2rem;
+        text-align: center;
+      }
+
+      section {
+        padding: 3rem 10%;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+      }
+
+      .box {
+        border: 1px solid #d0d7de;
+        border-radius: 6px;
+        padding: 20px;
+        width: 250px;
+        min-height: 150px;
+        background: var(--light);
+      }
+
+      .btn {
+        background-color: var(--primary);
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: bold;
+      }
+
+      #features .container {
+        display: block; /* Switch from flex to block */
+        max-width: 800px; /* Prevents lines from being too long */
+        margin: 0 auto; /* Centers the text block */
+      }
+
+      #features p {
+        margin-bottom: 1.5rem; /* Consistent spacing between paragraphs */
+        text-align: justify; /* Optional: gives it a clean, formal look */
+      }
+
+      footer {
+        text-align: center;
+        padding: 2rem;
+        font-size: 0.9rem;
+        color: #6e7781;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="img/facecomm-logo.png" width="150" alt="FaceComm" title="FaceComm" />
+      <h1>FaceComm</h1>
+      <p>An AI-powered multi-tenant customer security management platform</p>
+    </header>
+    <section id="features">
+      <h2 style="text-align: center;">Core Features</h2>
+      <div class="container">
+        <p>FaceComm is an AI-powered, multi-tenant customer security management platform that serves hundreds of organisations simultaneously, each with their own separate camera networks and customer databases. When someone appears on any camera in the system, it utilises advanced computer vision technology to capture their face and compare it only against that specific organisation's database of known people. If a match is found, the system sends real-time notifications exclusively to users within that organisation — ensuring complete data isolation between different companies using the platform. If no match is found, it still sends real-time new face capture notifications.</p>
+
+        <p>The platform is designed to handle large-scale deployments where each organisation might have dozens or hundreds of cameras across multiple locations. The system can simultaneously process up to 50,000 camera feeds, making it suitable for everything from small businesses to massive enterprise deployments. For example, a retail chain could have cameras in 500 stores, a security company could monitor 200 office buildings, and a restaurant group could track VIP customers across 150 locations — all running on the same platform simultaneously. Each organisation manages their own list of people to recognise, their own users and permissions, and receives notifications only about their own cameras and matches. The system automatically scales up processing power when new cameras are added and scales down when they're removed.</p>
+
+        <p>The main problem this solves is providing enterprise-grade face recognition capabilities without each organisation having to build and maintain their own infrastructure. Instead of every company needing their own servers, databases, and technical teams, they can all share the same robust platform while keeping their data completely separate and secure. This makes advanced face recognition technology accessible to organisations that couldn't otherwise afford to develop it themselves, while providing the scalability to handle everything from a single store to a multinational corporation. The addressable market for this type of security and customer recognition technology is estimated at $600 billion globally, spanning retail, hospitality, security, and corporate sectors.</p>
+
+        <p>At the core of FaceComm’s superior ROI is our proprietary elastic container logic, which fundamentally reimagines resource allocation for high-density computer vision. Unlike traditional static infrastructures that drain overhead by idling during low-activity periods, our system dynamically instantiates and terminates individual frame processors in real-time response to active telemetry. By decoupling the processing power from the raw camera count, we achieve a 'Scale-on-Demand' architecture that can seamlessly surge to 50,000 simultaneous feeds without the astronomical cloud waste typically associated with enterprise-grade facial recognition. For any partner, this means maximizing hardware density and power efficiency, turning what is usually a high-cost compute burden into a high-margin, hyper-scalable PaaS offering.</p>
+      </div>
+    </section>
+    <hr style="border: 0; border-top: 1px solid #eee; margin: 0 10%;">
+    <footer>
+      <p>&copy; 2026 <a href="https://github.com/NimaBavari">Tural Mahmudov </p>
+    </footer>
+  </body>
+</html>

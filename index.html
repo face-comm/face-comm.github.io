@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FaceComm | Our Way or No Way In</title>
-    <meta name="description" content="FaceComm: an AI-powered multi-tenant customer security management platform">
+    <meta name="description" content="FaceComm: AI-powered multi-tenant customer security management platform">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://face-comm.github.io/">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://face-comm.github.io">
     <meta property="og:title" content="FaceComm">
-    <meta property="og:description" content="FaceComm: an AI-powered multi-tenant customer security management platform">
+    <meta property="og:description" content="FaceComm: AI-powered multi-tenant customer security management platform">
     <meta property="og:image" content="https://face-comm.github.io/img/facecomm-logo.png">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
@@ -29,8 +29,20 @@
         }
 
         .header {
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             padding: 40px 20px;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .header-text {
+            text-align: left;
         }
 
         .header h1 {
@@ -632,113 +644,16 @@
 
     <div class="content">
         <header class="header">
-            <img src="img/facecomm-logo.png" width="150" alt="FaceComm" title="FaceComm" />
-            <h1>FaceComm</h1>
-            <p>An AI-powered multi-tenant customer security management platform</p>
+            <div class="header-content">
+                <img src="img/facecomm-logo.png" width="150" alt="FaceComm" title="FaceComm" />
+                <div class="header-text">
+                    <h1>FaceComm</h1>
+                    <p>AI-powered multi-tenant customer security management platform</p>
+                </div>
+            </div>
         </header>
 
         <div class="animation-container">
-            <!-- Architecture Overview -->
-            <section class="architecture-diagram">
-                <h2>Architecture</h2>
-                
-                <div class="diagram-layers">
-                    <!-- Frontend Layer -->
-                    <div class="layer-label">Frontend Layer</div>
-                    <div class="layer">
-                        <div class="component" id="frontend">
-                            <div class="component-icon">🖥️</div>
-                            <div class="component-name">Web UI</div>
-                            <div class="component-desc">Reactive Dashboard</div>
-                        </div>
-                        <div class="component" id="websocket">
-                            <div class="component-icon">⚡</div>
-                            <div class="component-name">WebSocket</div>
-                            <div class="component-desc">Real-time Updates</div>
-                        </div>
-                    </div>
-
-                    <div class="flow-container">
-                        <div class="flow-arrow">
-                            <div class="flow-line"></div>
-                            <div class="flow-arrow-icon">↓</div>
-                            <div class="flow-line"></div>
-                        </div>
-                    </div>
-
-                    <!-- API Layer -->
-                    <div class="layer-label">API Layer</div>
-                    <div class="layer">
-                        <div class="component" id="rest-api">
-                            <div class="component-icon">⚙️</div>
-                            <div class="component-name">REST API</div>
-                            <div class="component-desc">Flask Backend</div>
-                        </div>
-                        <div class="component" id="kafka">
-                            <div class="component-icon">📨</div>
-                            <div class="component-name">Kafka</div>
-                            <div class="component-desc">Event Broker</div>
-                        </div>
-                    </div>
-
-                    <div class="flow-container">
-                        <div class="flow-arrow">
-                            <div class="flow-line"></div>
-                            <div class="flow-arrow-icon">↓</div>
-                            <div class="flow-line"></div>
-                        </div>
-                    </div>
-
-                    <!-- Processing Layer -->
-                    <div class="layer-label">Processing Layer</div>
-                    <div class="layer">
-                        <div class="component" id="frame-processor">
-                            <div class="component-icon">📹</div>
-                            <div class="component-name">Frame Processor</div>
-                            <div class="component-desc">Face Detection</div>
-                        </div>
-                        <div class="component" id="customer-matcher">
-                            <div class="component-icon">🎯</div>
-                            <div class="component-name">Customer Matcher</div>
-                            <div class="component-desc">AI Matching</div>
-                        </div>
-                        <div class="component" id="orchestrator">
-                            <div class="component-icon">☷</div>
-                            <div class="component-name">Orchestrator</div>
-                            <div class="component-desc">Auto-scaling</div>
-                        </div>
-                    </div>
-
-                    <div class="flow-container">
-                        <div class="flow-arrow">
-                            <div class="flow-line"></div>
-                            <div class="flow-arrow-icon">↓</div>
-                            <div class="flow-line"></div>
-                        </div>
-                    </div>
-
-                    <!-- Data Layer -->
-                    <div class="layer-label">Data Layer</div>
-                    <div class="layer">
-                        <div class="component" id="postgres">
-                            <div class="component-icon">⛃</div>
-                            <div class="component-name">PostgreSQL</div>
-                            <div class="component-desc">Database</div>
-                        </div>
-                        <div class="component" id="minio">
-                            <div class="component-icon">☁️</div>
-                            <div class="component-name">MinIO</div>
-                            <div class="component-desc">Image Storage</div>
-                        </div>
-                        <div class="component" id="k8s">
-                            <div class="component-icon">☸️</div>
-                            <div class="component-name">Kubernetes</div>
-                            <div class="component-desc">Container Orchestration</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             <!-- Step-by-Step Flow -->
             <section class="flow-section">
                 <h2>How FaceComm Processes 50,000 Simultaneous Cameras</h2>
@@ -937,6 +852,107 @@
                     <button class="control-btn" id="triggerDetection">🎯 Simulate Customer Detection</button>
                 </div>
                 <div id="notificationArea"></div>
+            </section>
+
+            <!-- Architecture Overview -->
+            <section class="architecture-diagram">
+                <h2>Architecture</h2>
+                
+                <div class="diagram-layers">
+                    <!-- Frontend Layer -->
+                    <div class="layer-label">Frontend Layer</div>
+                    <div class="layer">
+                        <div class="component" id="frontend">
+                            <div class="component-icon">🖥️</div>
+                            <div class="component-name">Web UI</div>
+                            <div class="component-desc">Reactive Dashboard</div>
+                        </div>
+                        <div class="component" id="websocket">
+                            <div class="component-icon">⚡</div>
+                            <div class="component-name">WebSocket</div>
+                            <div class="component-desc">Real-time Updates</div>
+                        </div>
+                    </div>
+
+                    <div class="flow-container">
+                        <div class="flow-arrow">
+                            <div class="flow-line"></div>
+                            <div class="flow-arrow-icon">↓</div>
+                            <div class="flow-line"></div>
+                        </div>
+                    </div>
+
+                    <!-- API Layer -->
+                    <div class="layer-label">API Layer</div>
+                    <div class="layer">
+                        <div class="component" id="rest-api">
+                            <div class="component-icon">⚙️</div>
+                            <div class="component-name">REST API</div>
+                            <div class="component-desc">Flask Backend</div>
+                        </div>
+                        <div class="component" id="kafka">
+                            <div class="component-icon">📨</div>
+                            <div class="component-name">Kafka</div>
+                            <div class="component-desc">Event Broker</div>
+                        </div>
+                    </div>
+
+                    <div class="flow-container">
+                        <div class="flow-arrow">
+                            <div class="flow-line"></div>
+                            <div class="flow-arrow-icon">↓</div>
+                            <div class="flow-line"></div>
+                        </div>
+                    </div>
+
+                    <!-- Processing Layer -->
+                    <div class="layer-label">Processing Layer</div>
+                    <div class="layer">
+                        <div class="component" id="frame-processor">
+                            <div class="component-icon">📹</div>
+                            <div class="component-name">Frame Processor</div>
+                            <div class="component-desc">Face Detection</div>
+                        </div>
+                        <div class="component" id="customer-matcher">
+                            <div class="component-icon">🎯</div>
+                            <div class="component-name">Customer Matcher</div>
+                            <div class="component-desc">AI Matching</div>
+                        </div>
+                        <div class="component" id="orchestrator">
+                            <div class="component-icon">☷</div>
+                            <div class="component-name">Orchestrator</div>
+                            <div class="component-desc">Auto-scaling</div>
+                        </div>
+                    </div>
+
+                    <div class="flow-container">
+                        <div class="flow-arrow">
+                            <div class="flow-line"></div>
+                            <div class="flow-arrow-icon">↓</div>
+                            <div class="flow-line"></div>
+                        </div>
+                    </div>
+
+                    <!-- Data Layer -->
+                    <div class="layer-label">Data Layer</div>
+                    <div class="layer">
+                        <div class="component" id="postgres">
+                            <div class="component-icon">⛃</div>
+                            <div class="component-name">PostgreSQL</div>
+                            <div class="component-desc">Database</div>
+                        </div>
+                        <div class="component" id="minio">
+                            <div class="component-icon">☁️</div>
+                            <div class="component-name">MinIO</div>
+                            <div class="component-desc">Image Storage</div>
+                        </div>
+                        <div class="component" id="k8s">
+                            <div class="component-icon">☸️</div>
+                            <div class="component-name">Kubernetes</div>
+                            <div class="component-desc">Container Orchestration</div>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <!-- Key Features -->

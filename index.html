@@ -14,6 +14,43 @@
     <meta property="og:image" content="https://face-comm.github.io/img/facecomm-logo.png">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --accent-1: #667eea;
+            --accent-2: #764ba2;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --text-primary: #E0E0E0;
+            --text-secondary: #8892b0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #fff;
+            overflow-x: hidden;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin-inline: auto;
+            padding-inline: 20px;
+            padding-bottom: 80px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 40px 20px 80px;
+        }
+
         .header {
             display: flex;
             justify-content: center;
@@ -28,9 +65,139 @@
             flex-wrap: wrap;
             justify-content: center;
         }
+
+        .header h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: var(--text-secondary);
+        }
+
+        
+
+        
+
+        
+
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            padding: 30px 20px;
+            margin-bottom: 60px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cards {
+            display: grid;
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.4s ease;
+        }
+
+        .card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card:hover {
+            border-color: rgba(102, 126, 234, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .card h2 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .card p {
+            color: var(--text-primary);
+        }
+
+        .highlight {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin-top: 60px;
+            padding: 50px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.4s ease;
+        }
+
+        .cta-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .cta-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .cta-section p {
+            color: var(--text-secondary);
+        }
     </style>
 </head>
-
 <body>
     <header class="header">
         <div class="header-content">
@@ -41,6 +208,65 @@
             </div>
         </div>
     </header>
+
+    <div class="container">
+        <div class="stats-bar">
+            <div class="stat">
+                <div class="stat-value">50K</div>
+                <div class="stat-label">Simultaneous Feeds</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">100%</div>
+                <div class="stat-label">Data Isolation</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">$600B</div>
+                <div class="stat-label">Global Market</div>
+            </div>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <h2><span class="card-icon">🏢</span>Multi-Tenant Architecture</h2>
+                <p>FaceComm serves hundreds of organisations simultaneously, each with <span class="highlight">separate camera networks and customer databases</span>. When someone appears on any camera, advanced computer vision captures their face and compares it only against that specific organisation's database. Matches trigger <span class="highlight">real-time notifications</span> exclusively to users within that organisation — ensuring complete data isolation.</p>
+            </div>
+
+            <div class="card">
+                <h2><span class="card-icon">📹</span>Massive Scale Deployment</h2>
+                <p>The system handles large-scale deployments where each organisation might have <span class="highlight">dozens or hundreds of cameras</span> across multiple locations. A retail chain could monitor 500 stores, a security company could watch 200 office buildings, and a restaurant group could track VIP customers across 150 locations — all running simultaneously. <span class="highlight">Auto-scaling</span> adjusts processing power as cameras are added or removed.</p>
+            </div>
+
+            <div class="card">
+                <h2><span class="card-icon">💰</span>Enterprise-Grade ROI</h2>
+                <p>FaceComm eliminates the need for each organisation to build and maintain their own infrastructure. Instead of every company needing servers, databases, and technical teams, they share a <span class="highlight">robust platform</span> while keeping data completely separate and secure. Advanced face recognition becomes accessible to organisations that couldn't afford to develop it themselves — from single stores to <span class="highlight">multinational corporations</span>.</p>
+            </div>
+
+            <div class="card">
+                <h2><span class="card-icon">⚡</span>Elastic Container Logic</h2>
+                <p>Our proprietary <span class="highlight">'Scale-on-Demand' architecture</span> fundamentally reimagines resource allocation. Unlike traditional static infrastructures that idle during low-activity periods, our system <span class="highlight">dynamically instantiates and terminates</span> individual frame processors in real-time response to active telemetry. This achieves seamless surges to 50,000 simultaneous feeds without the astronomical cloud waste typically associated with enterprise-grade facial recognition — turning high-cost compute burden into <span class="highlight">high-margin, hyper-scalable PaaS</span>.</p>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>Ready to Scale?</h2>
+            <p>Transform your security infrastructure with enterprise-grade face recognition</p>
+        </div>
+    </div>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.card, .cta-section').forEach((el, index) => {
+            el.style.transitionDelay = `${index * 0.1}s`;
+            observer.observe(el);
+        });
+    </script>
 </body>
 
 </html>
